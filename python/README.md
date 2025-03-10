@@ -1,3 +1,4 @@
+_readme written by Stoyan Trilov_
 # `Communicating with Pico using serial over USB`
 
 With suitable compilation parameters, the `standard in/out` of a Pico, e.g. the output of `printf` can be received and or sent to a computer over the USB cable. The example `onboard_temperature_daq` project is already configured in this way. Below you will find instructions to monitor the incoming data.
