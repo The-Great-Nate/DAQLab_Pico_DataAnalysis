@@ -13,7 +13,7 @@ def temperature_readout(target, time_create, file_type):
     # event counter
     n = 1
 
-    # open a binary file for pickle storage
+    # open a binary file for json storage
 
     data_list = [] 
 
