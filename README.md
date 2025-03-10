@@ -1,6 +1,6 @@
 # `Data Acquisition Investigation with a Raspberry Pi Pico`
 
-_Install instructions adapted from Stoyan Trilov and Sudan Paramesvaran_
+_Install instructions adapted from Stoyan Trilov and Sudan Paramesvaran._
 This repository includes a project showing an example of how to use Raspberry Pi Pico functionality in a DAQ context.
 
 ## Build instructions
