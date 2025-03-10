@@ -28,3 +28,5 @@ In the previous section, you learnt how to communicate with the Pico using a ded
 2. Install the `pyserial` package into your python environment.
 
 **N.B. It is highly recommended that you use a dedicated python environment, e.g. `venv` or `conda`, for this work.**
+
+***Note: Some data analysis code attempts to look into a folder for a file, when initally testing the code, those folders must be manually created***
