@@ -1,0 +1,9 @@
+pico_ro_file_format_clk_volt.py
+pico_ro_file_format_clk.py
+pico_ro_file_format.py
+
+These files are designed to write to file_write_times etc.csv to examine the whole system. The readout func is essentially identical
+
+pico_ro_write_to_pico.py was edited during the first week of the experiment
+
+pico_ro_trunc.py, pico_ro_temp_benchmark.py is essentially redundant
