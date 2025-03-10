@@ -1,32 +1,33 @@
-_readme written by Stoyan Trilov_
-# `Communicating with Pico using serial over USB`
+# `Data Acquisition Investigation with a Raspberry Pi Pico`
 
-With suitable compilation parameters, the `standard in/out` of a Pico, e.g. the output of `printf` can be received and or sent to a computer over the USB cable. The example `onboard_temperature_daq` project is already configured in this way. Below you will find instructions to monitor the incoming data.
+_Install instructions adapted from Stoyan Trilov and Sudan Paramesvaran_
+This repository includes a project showing an example of how to use Raspberry Pi Pico functionality in a DAQ context.
 
-## Windows instructions:
+## Build instructions
 
-1. Download and install the application, `MobaXterm`, https://download.mobatek.net/2362023122033030/MobaXterm_Installer_v23.6.zip 
+1. Install VS Code and relevant dependencies by following the instructions in Chapter 2 and 3 of the [Raspberry Pi Pico Getting Started Guide](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf).
 
-2. Once installed, open MobaXterm, and click `Session`->`Serial`
+    1. If using Windows, download [git for Windows](https://git-scm.com/downloads/win), which will give you access to git commands and bash emulation. Alternatively, you could use the Windows Subsystem for Linux.
+2. Create, and move into a project directory for the DAQ Lab.
+```
+mkdir pico_daq_lab
+cd pico_daq_lab
+```
+3. Get a copy of the Pico DAQ repository (foundation taken from this repo)
+```
+git clone https://github.com/sparamesvaran/PHYS30033_DAQ_24_25.git
+cd PHYS30033_DAQ_24_25
+```
 
-3. Under `Serial port`, you should be able to see a device similar to: `USB Serial Device (COM6)`. Select it, and click OK.
+4. Import the newly cloned project using the Raspberry Pi Pico extension.
+    1. Open the extension from the right-hand toolbar
+    2. Click `Import Project`, and set the `Location` field to the correct directory of the cloned DAQ repository. 
+    3. Click `Import`. A new window should open, and VS Code will begin to download the Pico SDK and requisite tools.
 
-## Mac/Linux instructions:
+5. Build the DAQ project by clicking the `Compile` button in the blue ribbon of VS Code, which should now be available. The compilation output should now be under `build/onboard_temp_daq`.
 
-1. The Pico should appear as an USB serial device under the `/dev` directory. For example, `/dev/tty.usbmodem11101`. Check that this is the case, and note down the device name.
+## Pico programming instructions
 
-2. Use screen, together with the device name from previous step, to view the incoming data: `screen /dev/tty.usbmodem11101`
-
-<br>
-
-# `Communicating with Pico using serial over USB in python`
-
-In the previous section, you learnt how to communicate with the Pico using a dedicated application. In this section, you will learn how to receive the data using a python script.
-
-1. Modify the `pico_ro.py` script with the correct device name as per the previous section.
-
-2. Install the `pyserial` package into your python environment.
-
-**N.B. It is highly recommended that you use a dedicated python environment, e.g. `venv` or `conda`, for this work.**
-
-***Note: Some data analysis code attempts to look into a folder for a file, when initally testing the code, those folders must be manually created***
+1. Hold down the `BOOTSEL` button on Pico
+2. Plug the Pico micro-controler  into a computer using the micro-USB cable. A USB mass storage device, named `RPI-RP2` should appear.
+3. Copy the desired `.uf2` file (e.g.: `build/onboard_temp_daq/onboard_temp_daq.uf2`) to `RPI-RP2` (i.e. the Pico). This should cause the Pico to reboot, and start running the code in the binary file.
