@@ -27,9 +27,3 @@ In the previous section, you learnt how to communicate with the Pico using a ded
 2. Install the `pyserial` package into your python environment.
 
 **N.B. It is highly recommended that you use a dedicated python environment, e.g. `venv` or `conda`, for this work.**
-
-
-3. Run `pico_ro.py` using one of the following ways
-    1. No arguments: the script will indefinitely read events from the Pico, print them to screen, and save them to a csv file
-    2. 1 argument (`n_events`): the script will read `n_events` events from the Pico, print them to screen, and save them to a csv file
-    3. 3 arguments (`start`, `stop`, `step`): the script will take datasets with different number of events, where the range is specified by `start`, `stop`, and `steps`. The events will be printed to screen, and saved to a csv file
